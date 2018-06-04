@@ -1,10 +1,6 @@
 #!/usr/bin/env groovy
 //Leave the above line alone.  It identifies this as a groovy script.
 
-// adding specific vars for utf
-def utfProjPath = "source\\utf\\lvClass\\LV Class.lvproj"
-def lvVersion = 2017
-
 def call(viPath, projPath, buildTarget, buildSpec)
 {
 node
@@ -30,7 +26,10 @@ node
 	stage ('UTF Tests')
 	  {
 		echo 'Running UTF tests'
-		utfTest("${WORKSPACE}\\${utfProjPath}",lvVersion)
+		// adding specific vars for utf
+		def utfProjPath = "${WORKSPACE}\\source\\utf\\lvClass\\LV Class.lvproj"
+		def lvVersion = 2017
+		utfTest(utfProjPath,lvVersion)
 	  }
     stage ('LabVIEW Build')
       {
