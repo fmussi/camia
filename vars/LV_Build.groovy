@@ -9,7 +9,8 @@ def call(projPath, buildTarget, buildSpec)
 
 		//replacing build_json with lvBuild_json
         def lvBuild_json = JsonOutput.toJson(["Executor_Number": env.EXECUTOR_NUMBER.toString(), "Workspace_Path" : env.WORKSPACE+'\\build_temp' , "Build_Spec": "${buildSpec}", 'Target': "${buildTarget}" , 'Project_Path': "${WORKSPACE}\\${projPath}" , "Workspace_Path": env.WORKSPACE+'\\build_temp', "Auto_Version_Increment": "true".toBoolean()])
-        echo build_json
+		//replacing build_json with lvBuild_json
+        echo lvBuild_json
       
  
         //The following lines post the response from the CI Service. A successful build will return code 200. 
