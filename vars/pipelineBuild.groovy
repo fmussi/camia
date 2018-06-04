@@ -23,6 +23,11 @@ node
         echo 'Attempting to run the VI specified'
         runVI(viPath)
       }
+	stage ('UTF Tests')
+	  {
+		echo 'Running UTF tests'
+		utfTest("${WORKSPACE}\\${utfProjPath}",lvVersion)
+	  }
     stage ('LabVIEW Build')
       {
        echo 'Attempting to build the specification requested'

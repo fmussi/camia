@@ -5,6 +5,8 @@ def call(projPath, buildTarget, buildSpec)
 {
         echo 'Run basic tests before build'
         
+		// created separate stage for it
+		
         echo env.WORKSPACE+'\\build_temp'
 
 		//replacing build_json with lvBuild_json
