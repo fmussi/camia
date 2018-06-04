@@ -27,7 +27,7 @@ node
 	  {
 		echo 'Running UTF tests'
 		// adding specific vars for utf
-		def utfProjPath = "${WORKSPACE}\\source\\utf\\lvClass\\LV Class.lvproj"
+		def utfProjPath = "source\\utf\\lvClass\\LV Class.lvproj"
 		def lvVersion = 2017
 		utfTest(utfProjPath,lvVersion)
 	  }
